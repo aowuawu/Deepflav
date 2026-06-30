@@ -102,6 +102,8 @@ After completing the above process, the following key result files will be gener
 ## 📌 Notes
 
 1. **ESM model download**: The project defaults to loading the model from the local path `./esm_models/esm2_t33_650M_UR50D.pt`. Please ensure you have downloaded this weight file in advance, otherwise training and prediction stages will report errors.
+Download link `https://dl.fbaipublicfiles.com/fair-esm/models/esm1v_t33_650M_UR90S_1.pt`
 2. **ESM model regression parameter download**: The project assumes users have downloaded the `esm2_t33_650M_UR50D-contact-regression.pt` regression parameter file in advance. Please ensure you have downloaded this regression parameter file, otherwise training stage will report errors.
+Already provided in the `./esm_models/` 
 3. **API rate limit**: During KEGG and UniProt data acquisition, `sleep` has been added in the code to control request rate. If you encounter 403/429 errors, please appropriately increase the seconds in `time.sleep()`, or fill in your real email in the `User-Agent` in the code.
 4. **Hardware requirements**: `network_training.py` requires GPU (CUDA) to accelerate ESM-2 inference; the prediction script `predict_test_set.py` supports running on CPU, but is slower.
